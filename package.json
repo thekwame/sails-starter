@@ -2,6 +2,9 @@
   "name": "__Brand__",
   "version": "0.0.1",
   "description": "__Brand__ node.js webapp",
+  "engines": {
+    "node": "0.10.21"
+  }
   "dependencies": {
     "async": "^0.9.0",
     "bcrypt": "~0.7.8",
@@ -68,8 +71,5 @@
     "start": "node app.js",
     "debug": "node debug app.js"
   },
-  "main": "app.js",
-  "engines": {
-    "node": "0.10.21"
-  }
+  "main": "app.js"
 }
