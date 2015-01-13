@@ -22,8 +22,8 @@ module.exports.bootstrap = function (done) {
   hbs.registerPartials(path.resolve('views/_partials'));
 
   // register all helpers located in '/helpers' folder
-  // helpers.templating.register(hbs);
-  // helpers.misc.register(hbs);
+  helpers.templating.register(hbs);
+  helpers.misc.register(hbs);
   // helpers.pagination.register(hbs);
 
   helpers.statics.register(hbs, {
