@@ -24,7 +24,7 @@ module.exports = {
   connections: {
     Postgresql: {
       adapter: 'sails-postgresql',
-      url: 'postgres://oubcukdgrmjfrz:Yepe_9jrgK0yIVuyhpan-JrWH5@ec2-54-228-224-127.eu-west-1.compute.amazonaws.com:5432/d4pq9slihvgnns',
+      url: 'postgres://vfkanyzsfkmbba:77QWDj4ftY2qQZ7kXBjin0cYOn@ec2-54-235-127-33.compute-1.amazonaws.com:5432/dejat9j40s182j',
       ssl: true
     }
   },
