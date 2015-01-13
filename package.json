@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "__Brand__ node.js webapp",
   "engines": {
-    "node": "0.10.21"
+    "node": "0.10.x"
   }
   "dependencies": {
     "async": "^0.9.0",
