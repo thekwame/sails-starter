@@ -1,4 +1,5 @@
 {
+ "registry": "http://bower.herokuapp.com",
   "directory": "assets/bower_components",
   "json": "bower.json"
 }
