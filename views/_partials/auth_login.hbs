@@ -1,0 +1,39 @@
+<form role="form form-horizontal" action="{{#if isMobile}}{{route 'auth.callbackMobile'}}{{else}}{{route 'auth.callback'}}{{/if}}" method="post" class='auth-login-form panel panel-default'>
+
+{{!--   <div class="panel-heading">
+    <h1 class="panel-title">{{i18n 'ui_signin'}}</h1>
+  </div> --}}
+
+  <div class="panel-body">
+
+  {{> 'alerts'}}
+
+    <div class="auth-social clearfix">
+      {{> 'auth_providers'}}
+    </div>
+
+    <div class="form-group has-feedback">
+      <label class="control-label" for="auth-login-identifier">{{i18n 'auth_field_username_or_email'}} <span class="text-warning">*</span></label>
+      <input type="text" class="form-control identifier" name="identifier" placeholder="{{i18n 'auth_field_username_or_email'}}" value="{{form.identifier}}" id="auth-login-identifier">
+      <span class="help-block"></span>
+    </div>
+    <div class="form-group has-feedback">
+      <label class="control-label" for="auth-login-password">{{i18n 'auth_field_password'}} <span class="text-warning">*</span></label>
+      <input type="password" class="form-control password" name="password" placeholder="{{i18n 'auth_field_password'}}" value="{{form.password}}" id="auth-login-password">
+      <span class="help-block"></span>
+    </div>
+    <div class="checkbox">
+{{!--       <label>
+        <input type="checkbox"> {{{i18n 'auth_signin_rememberme'}}}
+      </label> --}}
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-lead btn-lg btn-block" data-loading-text="{{i18n 'ui_loading'}}" id="auth-login-submit">{{i18n 'ui_signin'}}</button>
+    </div>
+
+    <p class="mts mbn tac">{{i18n 'auth_not_member'}} <a href="{{#if isMobile}}{{route 'auth.register' lang=locale mobile='m'}}{{else}}{{route 'auth.register' lang=locale}}{{/if}}">{{i18n 'auth_register'}}</a></p>
+
+  </div>
+
+</form>

@@ -1,0 +1,16 @@
+  {{#push "styles"}}
+    <link rel="stylesheet" href="{{statics '/styles/403.css'}}">
+  {{/push}}
+
+  <div class="jumbotron">
+    <h1>
+      Forbidden page
+    </h1>
+    <p>
+    {{#if error}}
+      {{error}}
+    {{else}}
+      You don't have permission to see the page you're trying to reach.
+    {{/if}}
+    </p>
+  </div>

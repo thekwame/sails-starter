@@ -1,0 +1,10 @@
+body.layout_light {
+  background: $blue url('/images/bg/bg-pattern.png') repeat;
+  color:#fff;
+  .navbar {
+    background: transparent;
+  }
+  &.layout_mobile {
+    background: $blue;
+  }
+}

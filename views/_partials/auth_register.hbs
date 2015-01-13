@@ -1,0 +1,61 @@
+<form role="form form-horizontal" action="{{#if isMobile}}{{route 'auth.callbackMobile'}}{{else}}{{route 'auth.callback'}}{{/if}}/register" method="post" class='auth-register-form panel panel-default'>
+
+{{!--   <div class="panel-heading">
+    <h1 class="panel-title">{{i18n 'auth_register'}}</h1>
+  </div>
+ --}}
+  <div class="panel-body">
+
+  {{> 'alerts'}}
+
+    <div class="auth-social clearfix">
+      {{> 'auth_providers'}}
+    </div>
+
+    <div class="form-group form-group-lg has-feedback">
+      <label class="control-label" for="auth-register-email">{{i18n 'auth_field_email'}} <span class="text-warning">*</span></label>
+      <input type="email" class="form-control email" name="email" placeholder="{{i18n 'auth_field_email'}}" value="{{form.email}}" id="auth-register-email">
+      <span class="help-block"></span>
+    </div>
+
+    <div class="form-group form-group-lg has-feedback">
+      <label class="control-label" for="auth-register-password">{{i18n 'auth_field_password'}} <span class="text-warning">*</span></label>
+      <input type="password" class="form-control password" name="password" placeholder="{{i18n 'auth_field_password'}}" value="{{form.password}}" id="auth-register-password">
+      <span class="help-block"></span>
+    </div>
+
+    <div class="form-group form-group-lg has-feedback">
+      <label class="control-label" for="auth-register-password-repeat">{{i18n 'auth_field_passwordRepeat'}} <span class="text-warning">*</span></label>
+      <input type="password" class="form-control password" name="passwordRepeat" placeholder="{{i18n 'auth_field_passwordRepeat'}}" value="{{form.passwordRepeat}}" id="auth-register-password-repeat">
+      <span class="help-block"></span>
+    </div>
+
+    <div class="form-group form-group-lg has-feedback from-group-username" data-toggle="tooltip" data-placement="top">
+      <label class="control-label" for="auth-register-username">{{i18n 'auth_field_username_label'}}</label>
+      <input type="text" class="form-control username" name="username" placeholder="{{i18n 'auth_field_username'}}" value="{{form.username}}" id="auth-register-username">
+      <span class="help-block"></span>
+    </div>
+
+    <div class="form-group form-group-lg">
+        <label for="register_rules">
+          {{#set 'termsroute'}}{{route 'about.terms' lang=locale}}{{/set}}
+          {{#set 'privacyroute'}}{{route 'about.privacy' lang=locale}}{{/set}}
+          {{{i18n 'auth_register_terms' termsroute privacyroute}}}
+          <span class="help-block"></span>
+        </label>
+    </div>
+
+    <div class="text-center mtl">
+      <button type="submit" class="btn btn-lead btn-lg btn-block" data-loading-text="{{i18n 'ui_loading'}}" id="auth-register-submit">{{i18n 'auth_register'}}</button>
+    </div>
+
+    <p class="mts mbn text-center">
+      {{i18n 'auth_already_on'}}
+      <a href="{{#if isMobile}}{{route 'auth.login' lang=locale mobile='m'}}{{else}}{{route 'auth.login' lang=locale}}{{/if}}">
+        {{i18n 'auth_signin'}}
+      </a>
+    </p>
+
+  </div>
+
+</form>

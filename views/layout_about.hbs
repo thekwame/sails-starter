@@ -1,0 +1,66 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie11 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="{{locale}}"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie11 lt-ie10 lt-ie9 lt-ie8" lang="{{locale}}"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie11 lt-ie10 lt-ie9" lang="{{locale}}"> <![endif]-->
+<!--[if IE 9]><html class="no-js lt-ie11 lt-ie10" lang="{{locale}}"> <![endif]-->
+<!--[if IE 10]><html class="no-js lt-ie11" lang="{{locale}}"> <![endif]-->
+<!--[if gt IE 10]><!--><html class="no-js" lang="{{locale}}"> <!--<![endif]-->
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta content="{{locale}}" http-equiv="Content-Language">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="apple-itouch-icon" href="/images/favicon.png">
+
+    {{#unless robots}}
+    <meta name="robots" content="follow,index">
+    {{else}}
+    <meta name="robots" content="{{robots}}">
+    {{/unless}}
+
+    <meta name="csrf-token" content="{{_csrf}}">
+
+    {{#if usePopTitle}}
+     {{#pop "title"}}{{/pop}}
+    {{else}}
+    <title>{{#if title}}{{title}}{{else}}{{i18n 'brand_meta_title'}}{{/if}}</title>
+    {{/if}}
+
+    {{#pop "meta"}}{{/pop}}
+
+    <link rel="stylesheet" href="{{statics '/styles/main.css'}}">
+    {{#pop "styles"}}{{/pop}}
+
+    {{!-- If Browser can run JS, the .no-js class will be removed. Allow us to condition styling on JS availability --}}
+    <script>(function(d){d.className=d.className.replace(/no-js/,'');})(document.documentElement);</script>
+
+    <!--[if lt IE 9]>
+    <script src="{{statics '/scripts/polyfill.js'}}"></script>
+    <![endif]-->
+
+    {{> 'analytics'}}
+  </head>
+  <body class="layout_about {{bodyClass}}{{#unless user}} public-view{{/unless}}">
+    {{> 'header'}}
+    <main class="site-content pbxl">
+      {{> 'flash'}}
+      {{#if title}}
+      <div class="page-header page-header-about">
+        <div class='container'>
+          <h1>{{{title}}}</h1>
+        </div>
+      </div>
+      {{/if}}
+      <div class='container'>
+        {{{body}}}
+      </div>
+    </main>
+    {{> 'footer'}}
+    <script src="{{statics '/scripts/locales/translation.js'}}"></script>
+    <script src="{{statics '/scripts/main.js'}}"></script>
+    <script>require('app');</script>
+    {{#pop "scripts"}}{{/pop}}
+    {{> 'scripts_social'}}
+  </body>
+</html>

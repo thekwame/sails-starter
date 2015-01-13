@@ -1,0 +1,51 @@
+#!/bin/sh
+
+#
+# Retrieve file changes related to commit
+#
+files=$(git diff --cached --name-only --diff-filter=ACM)
+if [ "$files" = "" ]; then
+  printf "No files to check!\n"
+  exit 0
+fi
+
+# Pass through JSHint validator for *.js files in the commit
+pass=true
+printf "\e[4mRunning JShint validation.fdfd..\e[0m\n"
+for file in ${files}; do
+  if [[ "$file" == *.js ]]; then
+    if [[ "$file" == */assets/scripts/* ]]; then
+      # We temporarily disable client-side code until ES6 is supported
+      # result=$(jshint --config .jshintrc ${file})
+      result=""
+    else
+     result=$(jshint --config .node.jshintrc ${file})
+    fi
+
+    if [ "$result" != "" ]; then
+      printf "JSHint failed on file ${file}\n"
+      printf "\e[33m$result\e[0m\n"
+      pass=false
+    fi
+  fi
+done
+
+if ! $pass; then
+  printf "\e[31mCOMMIT CANCELLED:\e[0m some files in your commit failed JSHint validation!\n"
+  printf "Run 'grunt validate' and fix the errors.\n"
+  exit 1
+fi
+
+# Run jsbeautifier grunt task on all files
+grunt jsbeautifier:verify
+RETVAL=$?
+if [ $RETVAL -ne 0 ]
+then
+  pass=false
+fi
+
+if ! $pass; then
+  printf "\e[31mCOMMIT CANCELLED:\e[0m some files in your project have not been beautified!\n"
+  printf "Run 'grunt tidy && git add .' before committing.\n"
+  exit 1
+fi

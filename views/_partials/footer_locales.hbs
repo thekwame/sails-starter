@@ -1,0 +1,23 @@
+{{#if languages}}
+<div class='footer-locales text-right'>
+  <span class="text">{{i18n 'ui_languages'}}:</span>
+  <div class="dropdown dropup dispib">
+    <a data-toggle="dropdown" href="#" role="button">
+      {{#each languages}}
+        {{#if current}}
+          {{name}}
+        {{/if}}
+      {{/each}}
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel">
+      {{#each languages}}
+      <li>
+        <a href="?setLng={{code}}" rel="nofollow">{{name}}</a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+{{/if}}
+

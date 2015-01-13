@@ -1,0 +1,148 @@
+// Import Ridiculously Responsive Social Sharing Buttons : http://kurtnoble.com/labs/rrssb
+@import '../../bower_components/RRSSB/scss/rrssb.scss';
+
+// Import Bootstrap
+@import '../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap.scss';
+
+@import '_main-helpers';
+@import '_main-icons';
+// Import spritesheet
+
+body {
+  font-size: em(14px, 10px);
+}
+
+.site-content {
+  overflow:hidden;
+}
+
+.page-header-about {
+  background: lighten($body-bg, 10%);
+  padding:20px 0;
+  margin:0 0 40px 0;
+  border-color: #d7d7d7;
+  color: $green;
+
+}
+
+blockquote {
+  background: $blockquote-background-color;
+  padding: 20px;
+}
+
+/* Lead button */
+
+.btn-lead {
+  // bourbon mixin
+  @include button(simple, lighten($btn-lead-bg, 3%));
+  &:hover {
+    color: $btn-lead-color;
+  }
+}
+
+.btn-primary {
+  // bourbon mixin
+  @include button(simple, lighten($btn-primary-bg, 6%));
+  &:hover {
+    color: $btn-primary-color;
+  }
+}
+
+.btn-default {
+  // bourbon mixin
+  @include button(simple, #fff);
+  &:hover {
+    color: $btn-default-color;
+  }
+}
+
+.btn-lead,
+.btn-primary,
+.btn-default  {
+  text-transform: uppercase;
+  font-weight:normal;
+  &.btn-lg {
+    // rewrite bootstrap mixin
+    @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
+  }
+  &.btn-sm {
+    // rewrite bootstrap mixin
+    @include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+  }
+  &.btn-xs {
+    // rewrite bootstrap mixin
+    @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+  }
+  &.btn-lg,
+  &.btn-sm,
+  &.btn-xs {
+    &.btn-block {
+      @extend .btn-block;
+    }
+  }
+}
+
+$avatar-bg: darken($gray-lighter,5%);
+$avatar-border-color: lighten($blue-lighter,5%);
+.avatar {
+  background: $avatar-bg;
+  border-radius:50%;
+  overflow: hidden;
+  display:block;
+  border: 2px solid $avatar-border-color;
+  @include transition(background 0.3s, border-color 0.3s, box-shadow 0.3s);
+  &:hover, &:active, &:focus {
+    background: lighten($avatar-bg, 3%);
+    border-color: lighten($avatar-border-color, 10%);
+  }
+  &:active, &:focus {
+    @include prefixer(box-shadow, inset 0px 0px 0.6em 0px $gray-light, webkit spec);
+  }
+}
+
+.badge-charity {
+  color:$green;
+  @extend .glyphicon;
+}
+.badge-charity-empty {
+  @extend .glyphicon-heart-empty;
+}
+.badge-charity-active {
+  @extend .glyphicon-heart;
+}
+
+.drawing-balls {
+  .ball {
+    display: inline-block;
+    border-radius:100%;
+    padding:8px 13px;
+    font-size:em(22px);
+    text-align: center;
+    min-width: 60px;
+    color:#fff;
+    margin:0 5px;
+    background: $green;
+    border: 6px solid $gray-lighter;
+    @include radial-gradient(lighten($green-light, 10%), $green-dark);
+    @include prefixer(box-shadow, 0px 0px 3px 0px rgba(0, 0, 0,0.4), webkit spec);
+    text-shadow: 1px 1px rgba(0,0,0,0.6);
+  }
+  .lucky-ball {
+    padding:4px;
+  }
+  &.drawing-balls-lg {
+    font-size:em(20px);
+  }
+  &.drawing-balls-sm {
+    font-size:em(10px);
+  }
+}
+
+.pager {
+  a {
+    color:$pagination-color;
+    &:hover {
+      color:$pagination-hover-color;
+    }
+  }
+}

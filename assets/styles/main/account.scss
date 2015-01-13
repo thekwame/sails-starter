@@ -1,0 +1,14 @@
+body.account .site-content {
+  .account-providers {
+    li {
+      @media (max-width: $screen-xs-max) {
+        margin-bottom: 10px;
+      }
+      &:last-child {
+        @media (max-width: $screen-xs-max) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

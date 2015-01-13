@@ -1,0 +1,13 @@
+{{#if alert}}
+  <div class="row">
+    <div class="col-xs-12">
+      {{#with alert}}
+        <div class="alerts mbl">
+          <div class="alert alert-{{type}} mbn" role="alert">
+            {{{message}}}
+          </div>
+        </div>
+      {{/with}}
+    </div>
+  </div>
+{{/if}}

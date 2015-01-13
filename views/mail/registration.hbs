@@ -1,0 +1,167 @@
+{{#push "title"}}
+<title>{{i18n 'mail.registration.subject'}}</title>
+{{/push}}
+{{#push "styles"}}
+  <style type="text/css">
+    .template-label {
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 11px;
+    }
+
+    .callout .panel {
+      background: #FAFAFA;
+      border-color: #ECECEC;
+    }
+  </style>
+{{/push}}
+
+<!-- content start -->
+<table class="row">
+  <tr>
+    <td class="wrapper last">
+
+      <table class="twelve columns">
+        <tr>
+          <td>
+
+            <h2 class="center">{{{i18n 'mail.registration.hi' name}}}</h2>
+
+          </td>
+          <td class="expander"></td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+<!-- content start -->
+<table class="row">
+  <tr>
+    <td class="wrapper last">
+
+      <table class="twelve columns">
+        <tr>
+          <td>
+
+            <p class="lead center">{{{i18n 'mail.registration.title'}}}</p>
+
+          </td>
+          <td class="expander"></td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+
+<table class="row callout">
+  <tr>
+    <td class="wrapper last">
+
+      <table class="twelve columns">
+        <tr>
+          <td class="panel">
+
+            <p>{{{i18n 'mail.registration.desc' appIosUrl appAndroidUrl}}}</p>
+
+            <p>{{{i18n 'mail.registration.step.desc'}}}</p>
+
+            <ul>
+              <li>{{{i18n 'mail.registration.step.ticket'}}}</li>
+              <li>{{{i18n 'mail.registration.step.theme'}}}</li>
+              <li>{{{i18n 'mail.registration.step.prize'}}}</li>
+            </ul>
+
+            <p>{{{i18n 'mail.registration.invite'}}}</p>
+
+          </td>
+          <td class="expander"></td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+
+<table class="row">
+  <tr>
+    <td class="wrapper last center" align="center">
+      <center>
+      <table class="six columns">
+        <tr>
+          <td>
+
+          </td>
+          <td class="expander"></td>
+        </tr>
+      </table>
+      </center>
+    </td>
+  </tr>
+</table>
+
+<table class="row">
+  <tr>
+    <td class="wrapper last center" align="center">
+      <center>
+      <table class="ten columns">
+        <tr>
+          <td class="right-text-pad">
+
+            <table class="button medium-button secondary">
+              <tr>
+                <td class="right-text-pad left-text-pad">
+                  <a href="http://www.uralys.com{{route 'userSettings.account' lang=locale}}">{{i18n 'mail.registration.seeAccount'}}</a>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+          <td>
+
+            <table class="button medium-button">
+              <tr>
+                <td class="right-text-pad left-text-pad">
+                  <a href="http://www.uralys.com{{route 'game.index' lang=locale}}">{{i18n 'mail.registration.play'}}</a>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+      </center>
+    </td>
+  </tr>
+</table>
+
+<table class="row">
+  <tr>
+    <td class="wrapper last">
+
+      <table class="twelve columns">
+        <tr>
+          <td>
+
+            <hr />
+            <br>
+
+            <p>
+              {{{i18n 'mail.registration.luck'}}}
+              <br>
+              {{{i18n 'mail.registration.team'}}}
+            </p>
+          </td>
+          <td class="expander"></td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+

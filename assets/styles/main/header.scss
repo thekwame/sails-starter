@@ -1,0 +1,82 @@
+.site-header {
+  .navbar {
+    border-width:0 0 1px 0;
+  }
+  .navbar-brand {
+    padding-top:0;
+    padding-bottom:0;
+    line-height:$navbar-height;
+    img {
+      vertical-align: middle;
+    }
+  }
+  .navbar-nav {
+    .avatar-link {
+      padding-bottom: $navbar-padding-vertical/2;
+      .media {
+        overflow: visible;
+        .avatar {
+          position: relative;
+          top:-10px;
+        }
+      }
+    }
+  }
+}
+
+
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+// $grid-float-breakpoint:     $screen-sm-min !default;
+//** Point at which the navbar begins collapsing.
+// $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+
+
+@media screen and (max-width: $grid-float-breakpoint) {
+  .site-header {
+    .navbar-nav {
+      margin-left:0;
+      margin-right:0;
+      .avatar-link {
+        padding-bottom: 10px;
+        .media {
+          .avatar {
+            top:0;
+            width: 40px;
+          }
+          .media-body{
+            line-height: 40px;
+          }
+        }
+      }
+    }
+    .navbar-right {
+      .btn {
+        @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
+        display: block;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: floor(($navbar-padding-vertical / 2));
+      }
+    }
+    .navbar-btn {
+      .btn-group {
+        display:block;
+        > .btn {
+          float: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $grid-float-breakpoint) {
+  .site-header {
+    .navbar-right {
+      .btn-lead {
+        margin-left: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+  {{#push "styles"}}
+    <link rel="stylesheet" href="{{statics '/styles/500.css'}}">
+  {{/push}}
+
+  <div class="jumbotron">
+    <h1>
+      500 error page
+    </h1>
+    {{#if error}}
+      <pre class="error"><code>
+      {{error}}
+      </code></pre>
+    {{else}}
+      <p class="error">
+        A team of highly trained sea bass is working on this as we speak.<br/>
+        If the problem persists, please <a href="mailto://contact@uralys.com">contact the system administrator</a> and inform them of the time that the error occured, and anything you might have done that may have caused the error.
+      </p>
+    {{/if}}
+  </div>

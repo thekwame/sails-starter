@@ -1,0 +1,146 @@
+// Margins
+
+// None
+.pan         { padding: 0 !important; }
+.ptn, .pvn   { padding-top: 0 !important; }
+.prn, .phn   { padding-right: 0 !important }
+.pbn, .pvn   { padding-bottom: 0 !important; }
+.pln, .phn   { padding-left: 0 !important }
+
+// Extra Small
+.paxs        { padding: $spacingXs !important; }
+.ptxs, .pvxs { padding-top: $spacingXs !important; }
+.prxs, .phxs { padding-right: $spacingXs !important }
+.pbxs, .pvxs { padding-bottom: $spacingXs !important; }
+.plxs, .phxs { padding-left: $spacingXs !important }
+
+// Small
+.pas         { padding: $spacingS !important; }
+.pts, .pvs   { padding-top: $spacingS !important; }
+.prs, .phs   { padding-right: $spacingS !important }
+.pbs, .pvs   { padding-bottom: $spacingS !important; }
+.pls, .phs   { padding-left: $spacingS !important }
+
+// Medium
+.pam         { padding: $spacingM !important; }
+.ptm, .pvm   { padding-top: $spacingM !important; }
+.prm, .phm   { padding-right: $spacingM !important }
+.pbm, .pvm   { padding-bottom: $spacingM !important; }
+.plm, .phm   { padding-left: $spacingM !important }
+
+// Large
+.pal         { padding: $spacingL !important; }
+.ptl, .pvl   { padding-top: $spacingL !important; }
+.prl, .phl   { padding-right: $spacingL !important }
+.pbl, .pvl   { padding-bottom: $spacingL !important; }
+.pll, .phl   { padding-left: $spacingL !important }
+
+// Extra Large
+.paxl        { padding: $spacingXl !important; }
+.ptxl, .pvxl { padding-top: $spacingXl !important; }
+.prxl, .phxl { padding-right: $spacingXl !important }
+.pbxl, .pvxl { padding-bottom: $spacingXl !important; }
+.plxl, .phxl { padding-left: $spacingXl !important }
+
+
+// Padding
+
+// None
+.man         { margin: 0 !important; }
+.mtn, .mvn   { margin-top: 0 !important; }
+.mrn, .mhn   { margin-right: 0 !important }
+.mbn, .mvn   { margin-bottom: 0 !important; }
+.mln, .mhn   { margin-left: 0 !important }
+
+// Extra Small
+.maxs        { margin: $spacingXs !important; }
+.mtxs, .mvxs { margin-top: $spacingXs !important; }
+.mrxs, .mhxs { margin-right: $spacingXs !important }
+.mbxs, .mvxs { margin-bottom: $spacingXs !important; }
+.mlxs, .mhxs { margin-left: $spacingXs !important }
+
+// Small
+.mas         { margin: $spacingS !important; }
+.mts, .mvs   { margin-top: $spacingS !important; }
+.mrs, .mhs   { margin-right: $spacingS !important }
+.mbs, .mvs   { margin-bottom: $spacingS !important; }
+.mls, .mhs   { margin-left: $spacingS !important }
+
+// Medium
+.mam         { margin: $spacingM !important; }
+.mtm, .mvm   { margin-top: $spacingM !important; }
+.mrm, .mhm   { margin-right: $spacingM !important }
+.mbm, .mvm   { margin-bottom: $spacingM !important; }
+.mlm, .mhm   { margin-left: $spacingM !important }
+
+// Large
+.mal         { margin: $spacingL !important; }
+.mtl, .mvl   { margin-top: $spacingL !important; }
+.mrl, .mhl   { margin-right: $spacingL !important }
+.mbl, .mvl   { margin-bottom: $spacingL !important; }
+.mll, .mhl   { margin-left: $spacingL !important }
+
+// Extra Large
+.maxl        { margin: $spacingXl !important; }
+.mtxl, .mvxl { margin-top: $spacingXl !important; }
+.mrxl, .mhxl { margin-right: $spacingXl !important }
+.mbxl, .mvxl { margin-bottom: $spacingXl !important; }
+.mlxl, .mhxl { margin-left: $spacingXl !important }
+
+
+// Text Alignment
+
+.tac, .center { text-align: center !important; }
+.tal { text-align: left !important; }
+.tar { text-align: right !important; }
+.taj { text-align: justify !important; }
+.tai { text-align: inherit !important; }
+
+// Block Alignment
+
+.bac, .bal { float: none; margin-right: auto !important; }
+.bac, .bar { float: none; margin-left: auto !important; }
+
+// Vertical Alignment
+
+.vam { vertical-align: middle !important; }
+.vab { vertical-align: bottom !important; }
+
+.dispb { display: block !important; }
+.dispib { display: inline-block !important; }
+.dispi { display: inline !important; }
+
+@media screen and (max-width: $container-desktop) {
+  .hide-m { display: none; }
+  .show-m { display: block; }
+
+  .tal-m { text-align: left; }
+  .tar-m { text-align: right; }
+  .tac-m { text-align: center; }
+
+  .fl-m { float: left;  }
+  .fr-m { float: right;  }
+  .fno-m { float: none; }
+
+  .dispb-m { display: block; }
+  .dispib-m { display: inline-block; }
+  .dispi-m { display: inline; }
+
+}
+
+@media screen and (max-width: $container-tablet) {
+  .hide-s { display: none; }
+  .show-s { display: block; }
+
+  .tal-s { text-align: left; }
+  .tar-s { text-align: right; }
+  .tac-s { text-align: center; }
+
+  .fl-s { float: left;  }
+  .fr-s { float: right;  }
+  .fno-s { float: none; }
+
+  .dispb-s { display: block; }
+  .dispib-s { display: inline-block; }
+  .dispi-s { display: inline; }
+}

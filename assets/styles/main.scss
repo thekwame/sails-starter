@@ -1,0 +1,16 @@
+// Import custom Bootstrap
+// Defaults bootstrap will be overide
+
+@import '_partials/_main-variables';
+@import '_partials/_main-mixins';
+
+@import '_partials/_main_bootstrap';
+
+@import 'main/header.scss';
+@import 'main/footer.scss';
+@import 'main/light.scss';
+@import 'main/mobile.scss';
+@import 'main/auth.scss';
+@import 'main/account.scss';
+
+//@import '_partials/_sprites';

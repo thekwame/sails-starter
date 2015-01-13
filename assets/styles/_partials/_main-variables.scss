@@ -1,0 +1,110 @@
+// Variables
+// --------------------------------------------------
+
+// Import Colors variables
+@import '_main-colors';
+
+$body-bg: #f7f5f1;
+$body-bg-alt: #fff;
+$text-color: #3B4047;
+$link-color:#58A8DF;
+
+$gray-darker:            lighten(#000, 13.5%) !default; // #222
+$gray-dark:              lighten(#000, 20%) !default;   // #333
+$gray:                   lighten(#000, 33.5%) !default; // #555
+$gray-light:             lighten(#000, 60%) !default;   // #999
+$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
+
+$em-base: 14px;
+
+// set fonts location
+$icon-font-path: '/fonts/';
+//** File name for all font files.
+$icon-font-name: 'glyphicons-regular';
+//** Element ID within SVG icon file.
+$icon-font-svg-id: 'glyphiconsregular';
+
+$state-danger-text: #F75731;
+$state-warning-text: $orange-dark;
+$state-success-text: $green-lighter;
+
+$alert-warning-bg: lighten($orange-lighter, 25%);
+$alert-danger-bg: lighten($state-danger-text, 37%);
+
+$brand-lead: #F7B62F;
+$brand-primary: #13262E;
+$brand-footer: #13262e;
+
+$btn-lead-color: $brand-primary;
+$btn-lead-bg: $brand-lead;
+$btn-lead-border: darken($btn-lead-bg, 5%);
+
+$btn-primary-color: #fff;
+$btn-primary-bg: $brand-primary;
+$btn-primary-border: darken($btn-primary-bg, 5%);
+
+$btn-default-color: $brand-primary;
+$btn-default-bg: #eee;
+$btn-default-border: darken($btn-default-bg, 5%);
+
+$padding-large-vertical: 16px;
+$padding-large-horizontal: 26px;
+
+$border-radius-base: 4px;
+$border-radius-large: 4px;
+$border-radius-small: 4px;
+
+// spacing
+$spacingXs: 5px;
+$spacingS: 10px;
+$spacingM: 15px;
+$spacingL: 20px;
+$spacingXl: 30px;
+
+//** Blockquote small color
+$blockquote-font-size: ($em-base * 1.25) !default;
+$blockquote-small-color: $gray !default;
+$blockquote-border-color: $green-light;
+$blockquote-background-color: #fff;
+
+// navbar
+$navbar-height: 100px;
+$navbar-default-bg:  #fff;
+$navbar-border-radius: 0;
+
+// navbar inverse
+$navbar-inverse-color: $gray-lighter;
+$navbar-inverse-bg: $blue;
+$navbar-inverse-border: rgba(255,255,255, 0.2);
+$navbar-inverse-link-hover-bg: $green-light;
+$navbar-inverse-link-color: $gray-lighter;
+$navbar-inverse-link-active-bg: $green-light;
+$navbar-inverse-toggle-hover-bg: darken($blue-dark, 20%);
+$navbar-inverse-toggle-icon-bar-bg: $gray-lighter;
+$navbar-inverse-toggle-border-color: darken($blue-dark, 20%);
+
+//== Pagination
+$pagination-color:                     $gray !default;
+$pagination-bg:                        #fff !default;
+$pagination-border:                    #ddd !default;
+
+$pagination-hover-color:               $green-lighter !default;
+$pagination-hover-bg:                  $gray-lighter !default;
+$pagination-hover-border:              #ddd !default;
+
+$pagination-active-color:              #fff !default;
+$pagination-active-bg:                 $green-light !default;
+$pagination-active-border:             $green !default;
+
+//== Pager
+$pager-border-radius:                  3px;
+
+$facebook: #306199;
+$tumblr: #32506d;
+$linkedin: #007bb6;
+$twitter: #26c4f1;
+$googleplus: #e93f2e;
+$reddit: #8bbbe3;
+$youtube: #df1c31;
+$pinterest: #b81621;
+$github: #444;

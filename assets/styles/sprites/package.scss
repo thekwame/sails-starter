@@ -1,0 +1,31 @@
+// Nested Folders :
+// @import "themes/orange/*.png";
+// @include all-orange-sprites;
+
+// @import "my-icons/*.png";
+
+// Selector Control :
+// .actions {
+//   .new    { @include my-icons-sprite(new);    }
+//   .edit   { @include my-icons-sprite(edit);   }
+//   .save   { @include my-icons-sprite(save);   }
+//   .delete { @include my-icons-sprite(delete); }
+// }
+
+$main-layout: smart;
+$main-spacing: 10px;
+$main-sprite-dimensions: true;
+@import "main/*.png";
+@include all-main-sprites;
+
+$features-layout: smart;
+$features-spacing: 10px;
+$features-sprite-dimensions: true;
+@import "features/*.png";
+@include all-features-sprites;
+
+$logos-layout: vertical;
+$logos-spacing: 10px;
+$logos-sprite-dimensions: true;
+@import "logos/*.png";
+@include all-logos-sprites;

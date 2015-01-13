@@ -1,0 +1,21 @@
+{
+  "name": "__Brand__",
+  "dependencies": {
+    "jquery": "~1.10.2",
+    "i18next": "~1.7.3",
+    "handlebars": "~1.3.0",
+    "amd-loadr": "~0.0.2",
+    "skrollr": "~0.6.26",
+    "html5shiv": "latest",
+    "json2": "latest",
+    "respond": "latest",
+    "bourbon": "~3.2.1",
+    "bootstrap-sass-official": "~3.2.0",
+    "RRSSB": "~1.6.0",
+    "jquery.countdown": "~2.0.4",
+    "underscore": "~1.6.0",
+    "backbone": "~1.1.2",
+    "backbone-validation": "~0.9.1",
+    "backbone.marionette": "~2.1.0"
+  }
+}

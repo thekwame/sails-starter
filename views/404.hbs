@@ -1,0 +1,18 @@
+  {{#push "styles"}}
+    <link rel="stylesheet" href="{{statics '/styles/404.css'}}">
+  {{/push}}
+
+  <div class="jumbotron">
+    <h1>
+      404 error page
+    </h1>
+    <p>
+    {{#if error}}
+      {{error}}
+    {{else}}
+      It looks like you're lost...<br />
+      The page you are looking for no longer exists.
+    {{/if}}
+    </p>
+    <p><a href="/" class="btn btn-primary btn-lg">Go to homepage</a></p>
+  </div>
