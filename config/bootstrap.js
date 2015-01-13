@@ -22,9 +22,9 @@ module.exports.bootstrap = function (done) {
   hbs.registerPartials(path.resolve('views/_partials'));
 
   // register all helpers located in '/helpers' folder
-  helpers.templating.register(hbs);
-  helpers.misc.register(hbs);
-  helpers.pagination.register(hbs);
+  // helpers.templating.register(hbs);
+  // helpers.misc.register(hbs);
+  // helpers.pagination.register(hbs);
 
   helpers.statics.register(hbs, {
     mapping: __dirname + '/assets.json',
@@ -39,12 +39,12 @@ module.exports.bootstrap = function (done) {
     routes: sails.config.routes
   });
 
-  helpers.extUrl.register(hbs, {
-    aliases: __dirname + '/urlAliases.json'
-  });
-  sails.config.extUrl = helpers.extUrl.getExtURLHelper({
-    aliases: __dirname + '/urlAliases.json'
-  });
+  // helpers.extUrl.register(hbs, {
+  //   aliases: __dirname + '/urlAliases.json'
+  // });
+  // sails.config.extUrl = helpers.extUrl.getExtURLHelper({
+  //   aliases: __dirname + '/urlAliases.json'
+  // });
 
   // sails.services.passport.loadStrategies();
 
