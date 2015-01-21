@@ -14,7 +14,7 @@ var generate_token = function () {
 
 module.exports = {
 
-  tableName: 'user',
+  tableName: 'brand_user',
 
   // Set false to prevent creating id. By default id will be created as index with auto increment
   autoPK: false,
@@ -28,6 +28,47 @@ module.exports = {
   migrate: 'safe',
 
   attributes: {
+
+    //--------------------------------------------------------------------------
+
+    uid: {
+      type: 'string',
+      unique: true,
+      primaryKey: true
+    },
+
+    email: {
+      type: 'email',
+      unique: true,
+      required: false
+    },
+
+    userName: {
+      type: 'string',
+      columnName: 'user_name'
+    },
+
+    firstName: {
+      type: 'string',
+      columnName: 'first_name'
+    },
+
+    lastName: {
+      type: 'string',
+      columnName: 'last_name'
+    },
+
+    //--------------------------------------------------------------------------
+    /*
+     * One-to-Many association
+     */
+
+    passports: {
+      collection: 'passport',
+      via: 'user'
+    },
+
+    //--------------------------------------------------------------------------
 
     createdAt: {
       type: 'datetime',
@@ -44,42 +85,7 @@ module.exports = {
       }
     },
 
-    uid: {
-      type: 'string',
-      unique: true,
-      primaryKey: true
-    },
-
-    photo: {
-      type: 'string',
-      columnName: 'photo_url'
-    },
-
-    email: {
-      type: 'email',
-      unique: true,
-      required: false
-    },
-
-    firstName: {
-      type: 'string',
-      columnName: 'first_name'
-    },
-
-    lastName: {
-      type: 'string',
-      columnName: 'last_name'
-    },
-
-    /*
-     * One-to-Many association
-     */
-
-    passports: {
-      collection: 'passport',
-      via: 'user'
-    },
-
+    //--------------------------------------------------------------------------
     /*
      * Methods
      */

@@ -36,7 +36,9 @@ module.exports.routes = {
   'get /auth/:provider': 'AuthController.provider',
   'get /auth/:provider/callback': 'AuthController.callback',
 
-  '/:lang?': 'HomeController.index',
+  'get /:lang?': 'HomeController.index',
+
+  'get /:lang/dashboard': 'DashboardController.index',
 
   //----------------------------------------------------------------------------
   // API : public endpoints

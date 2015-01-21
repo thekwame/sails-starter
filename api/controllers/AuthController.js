@@ -137,7 +137,7 @@ var AuthController = {
           'lang': res.getLocale()
         }
       }),
-      accountRoute = sails.config.route('userSettings.account', {
+      dashboardRoute = sails.config.route('dashboard.index', {
         hash: {
           'lang': res.getLocale()
         }
@@ -164,7 +164,7 @@ var AuthController = {
           if (req._registered === true) {
             (new sails.services.mail(res)).registration(user.firstName, user.userName, user.email);
           }
-          res.redirect(req.flash('back')[0] || accountRoute);
+          res.redirect(req.flash('back')[0] || dashboardRoute);
         }
       });
     });
