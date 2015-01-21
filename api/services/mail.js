@@ -11,9 +11,7 @@ function Mail(res) {
   }
   this.res = res;
   this.smtpTransportOptions = {
-    host: 'smtp.gmail.com',
-    port: 465,
-    ignoreTLS: false,
+    service: 'gmail',
     auth: {
       user: 'no-reply@uralys.com',
       pass: 'n0r3ply098'
@@ -93,19 +91,19 @@ Mail.prototype.registration = function (firstName, userName, email) {
   }
 
   return this._sendHtmlMail('mail/registration', {
-    name: name
-  }, {
-    to: email,
-    subject: this.res.i18n('mail.registration.subject')
-  })
-  .then(function (response) {
-    sails.log.info('mail.registration#service : Message sent to email:' + email + ', ' + response);
-    return response;
-  })
-  .fail(function (err) {
-    sails.log.error('mail.registration#service : failed to email:' + email, err);
-    throw err;
-  });
+      name: name
+    }, {
+      to: email,
+      subject: this.res.i18n('mail.registration.subject')
+    })
+    .then(function (response) {
+      sails.log.info('mail.registration#service : Message sent to email:' + email + ', ' + response);
+      return response;
+    })
+    .fail(function (err) {
+      sails.log.error('mail.registration#service : failed to email:' + email, err);
+      throw err;
+    });
 
 };
 

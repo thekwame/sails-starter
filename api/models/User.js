@@ -95,7 +95,6 @@ module.exports = {
     }
   },
 
-
   beforeCreate: function (user, next) {
     if (_.isString(user.userName) && _.isEmpty(user.userName)) {
       user.userName = null;

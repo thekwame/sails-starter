@@ -39,40 +39,40 @@ exports.register = function (req, res, next) {
   }
 
   User.create({
-    userName: userName,
-    email: email.toLowerCase()
-  })
-  .then(function createPassport(user) {
-    sails.log.info('Passport.local.register#service: create a local user', user.uid);
-    Passport.create({
-        protocol: 'local',
-        password: password,
-        user: user.uid
-      })
-      .then(function done(passport) {
-        sails.log.info('Passport.local.register#service: create a local passport', passport.id);
-        req._registered = true;
-        next(null, user);
-      })
-      .fail(function (err) {
-        if (err.code === 'E_VALIDATION') {
-          req.flash_alert('danger', 'Error.Passport.Password.Invalid');
+      userName: userName,
+      email: email.toLowerCase()
+    })
+    .then(function createPassport(user) {
+      sails.log.info('Passport.local.register#service: create a local user', user.uid);
+      Passport.create({
+          protocol: 'local',
+          password: password,
+          user: user.uid
+        })
+        .then(function done(passport) {
+          sails.log.info('Passport.local.register#service: create a local passport', passport.id);
+          req._registered = true;
+          next(null, user);
+        })
+        .fail(function (err) {
+          if (err.code === 'E_VALIDATION') {
+            req.flash_alert('danger', 'Error.Passport.Password.Invalid');
+          }
+          user.destroy().then(function () {
+            sails.log.warn('Passport.local.register#service: destroy a user, because a passport failed');
+            next(err);
+          }).fail(next);
+        });
+    }).fail(function (err) {
+      if (err.code === 'E_VALIDATION') {
+        if (err.invalidAttributes.email) {
+          req.flash_alert('danger', 'Error.Passport.Email.Exists');
+        } else {
+          req.flash_alert('danger', 'Error.Passport.User.Exists');
         }
-        user.destroy().then(function () {
-          sails.log.warn('Passport.local.register#service: destroy a user, because a passport failed');
-          next(err);
-        }).fail(next);
-      });
-  }).fail(function (err) {
-    if (err.code === 'E_VALIDATION') {
-      if (err.invalidAttributes.email) {
-        req.flash_alert('danger', 'Error.Passport.Email.Exists');
-      } else {
-        req.flash_alert('danger', 'Error.Passport.User.Exists');
       }
-    }
-    next(err);
-  });
+      next(err);
+    });
 };
 
 /**
