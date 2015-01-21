@@ -19,7 +19,7 @@
       </a>
       <ul class="dropdown-menu" role="menu">
         <li>
-          <a href="{{route 'userSettings.account' lang=locale id=user.uid}}" id="header-private-account">
+          <a href="{{route 'dashboard.index' lang=locale id=user.uid}}" id="header-private-account">
           {{{i18n 'account'}}}
           </a>
         </li>
@@ -35,7 +35,7 @@
   </ul>
 
   <div class="navbar-btn navbar-right">
-    <a href="{{route 'game.index' lang=locale}}" class="btn btn-lead" id="header-private-play">
+    <a href="{{route 'dashboard.index' lang=locale}}" class="btn btn-lead" id="header-private-play">
     {{{i18n 'play'}}}
     </a>
   </div>
