@@ -13,14 +13,14 @@ function Mail(res) {
   this.smtpTransportOptions = {
     host: 'smtp.gmail.com',
     port: 465,
-    ignoreTLS: true,
+    ignoreTLS: false,
     auth: {
       user: 'no-reply@uralys.com',
       pass: 'n0r3ply098'
     }
   };
   this.defaultsMailOptions = {
-    from: 'uralys <contact@uralys.com>'
+    from: 'Uralys <no-reply@uralys.com>'
   };
 }
 
