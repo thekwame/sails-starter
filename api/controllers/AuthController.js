@@ -148,7 +148,6 @@ var AuthController = {
       if (err && err.code !== 'E_VALIDATION' && err.message !== 'abort') {
         sails.log.error(err);
       }
-      console.log('login');
       req.login(user, function (err) {
         // If an error was thrown, redirect the user to the login which should
         // take care of rendering the error messages.
@@ -163,11 +162,9 @@ var AuthController = {
             res.redirect(loginRoute);
           }
         } else {
-          console.log('no err');
           if (req._registered === true) {
             (new sails.services.mail(res)).registration(user.firstName, user.userName, user.email);
           }
-          console.log('dashboard');
           res.redirect(req.flash('back')[0] || dashboardRoute);
         }
       });
