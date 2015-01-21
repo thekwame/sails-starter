@@ -93,5 +93,30 @@ module.exports = {
     fullname: function () {
       return this.firstName + ' ' + this.lastName;
     }
+  },
+
+
+  beforeCreate: function (user, next) {
+    if (_.isString(user.userName) && _.isEmpty(user.userName)) {
+      user.userName = null;
+    }
+    if (_.isString(user.email) && _.isEmpty(user.email)) {
+      user.email = null;
+    }
+
+    // generare uid
+    user.uid = uuid.v4();
+    next(null, user);
+  },
+
+  beforeUpdate: function (user, next) {
+    if (_.isString(user.userName) && _.isEmpty(user.userName)) {
+      user.userName = null;
+    }
+    if (_.isString(user.email) && _.isEmpty(user.email)) {
+      user.email = null;
+    }
+
+    next(null, user);
   }
 };

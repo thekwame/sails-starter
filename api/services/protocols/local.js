@@ -41,7 +41,8 @@ exports.register = function (req, res, next) {
   User.create({
     userName: userName,
     email: email.toLowerCase()
-  }).then(function createPassport(user) {
+  })
+  .then(function createPassport(user) {
     sails.log.info('Passport.local.register#service: create a local user', user.uid);
     Passport.create({
         protocol: 'local',
@@ -51,7 +52,6 @@ exports.register = function (req, res, next) {
       .then(function done(passport) {
         sails.log.info('Passport.local.register#service: create a local passport', passport.id);
         req._registered = true;
-        user.trackSignedUp('local');
         next(null, user);
       })
       .fail(function (err) {
