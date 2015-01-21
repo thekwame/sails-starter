@@ -36,6 +36,10 @@ module.exports.policies = {
     '*': ApiPolicies // to restric access by a token authentification
   },
 
+  'dashboardController': {
+    '*': WebPolicies
+  },
+
   'publicController': {
     '*': AUTHORIZED
   }
