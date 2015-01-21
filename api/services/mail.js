@@ -93,16 +93,16 @@ Mail.prototype.registration = function (firstName, userName, email) {
   }
 
   return this._sendHtmlMail('mail/registration', {
-    name: name,
-    appIosUrl: sails.config.extUrl('app_ios'),
-    appAndroidUrl: sails.config.extUrl('app_android')
+    name: name
   }, {
     to: email,
     subject: this.res.i18n('mail.registration.subject')
-  }).then(function (response) {
+  })
+  .then(function (response) {
     sails.log.info('mail.registration#service : Message sent to email:' + email + ', ' + response);
     return response;
-  }).fail(function (err) {
+  })
+  .fail(function (err) {
     sails.log.error('mail.registration#service : failed to email:' + email, err);
     throw err;
   });
